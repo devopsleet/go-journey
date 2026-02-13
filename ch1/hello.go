@@ -21,4 +21,12 @@ func main() {
 	var sum1 float64 = float64(x) + y
 	var sum2 int = x + int(y)
 	fmt.Println(sum1,sum2)
+
+	var b int= 100
+	b+= (900)
+	fmt.Println(b)
+
+	var num, str = 10, "hello"
+	fmt.Println(num)
+	fmt.Println(str)
 }
