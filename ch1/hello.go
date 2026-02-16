@@ -12,8 +12,12 @@ const (
 const z = 20 * 10
 
 func main() {
-	const y = "hello"
+	const x = 10
 
-	fmt.Println(x)
-	fmt.Println(y)
+	var y int = x
+	var z float64= x
+	var d byte = x
+
+	fmt.Println(y,z,d)
+	fmt.Printf("%f\n",z)
 }
