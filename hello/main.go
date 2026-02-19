@@ -2,13 +2,17 @@ package main
 
 import "fmt" 
 
-const x = 10
+const x = 10.5
 
 func main() {
 
 
-	var y int = x
+	y := int64(x)
+	z := float64(x)
+	//d := byte(x)
 
 	fmt.Println(y)
+	fmt.Println(z)
+	// fmt.Println(d)
 
 }
