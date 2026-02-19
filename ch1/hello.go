@@ -12,10 +12,9 @@ const (
 const z = 20 * 10
 
 func main() {
-	x := 10
-	x = 20
 
-	fmt.Println(x)
+	fmt.Println("Hello fropm go")
 
-	x = 30
+
+	
 }
