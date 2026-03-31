@@ -4,19 +4,17 @@ import "fmt"
 
 // variable declarations
 
-var x int = 10
-
-var x_without_type = 20
-
-var x_zero_val int
-
-var a,b int = 10,20
-
-var c,d = 30, "hello"
-
+const x = 10
 
 
 func main() {
-	fmt.Println(x)
+	var y int = x
+	fmt.Println(y)
+	var z float64 = x
+	fmt.Println(z)
+	var d byte = x
+	fmt.Println(d)
+
+	fmt.Print(x)
 	
 }
