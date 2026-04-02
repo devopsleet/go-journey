@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"math"
+	//"math"
 )
 
 // variable declarations
@@ -13,13 +13,18 @@ const a = 40
 
 
 func main() {
-	 var investmentAmount float64 = 1000
-	 var expectedReturnRate = 5.5
-	 var years float64 = 10
-	
-	 var futureValue = investmentAmount* math.Pow(1 + expectedReturnRate/100, years)
-	 fmt.Println(futureValue)
 	 
+	var x [3]int
+
+	fmt.Println(x[0])
+
+	var a = [...]int{1,2,3}
+	var b = [3]int{1,2,3}
+
+	fmt.Println(a==b)
+	 
+	var y = [3]int{1,2}
+	fmt.Println(y[1])
 
 	
 }
