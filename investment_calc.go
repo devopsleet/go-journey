@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"slices"
 	//"math"
 )
 
@@ -9,22 +10,16 @@ import (
 
 // const x = 10
 
-const a = 40
+//const a = 40
 
 
 func main() {
-	 
-	var x [3]int
 
-	fmt.Println(x[0])
+	//Slices
+	x:= []int{1,2,3}
+	y:= []int{1,2,3,4}
 
-	var a = [...]int{1,2,3}
-	var b = [3]int{1,2,3}
+	fmt.Println((slices.Equal(x,y)))
 
-	fmt.Println(a==b)
-	 
-	var y = [3]int{1,2}
-	fmt.Println(y[1])
 
-	
 }
