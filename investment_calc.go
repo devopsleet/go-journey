@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	//"slices"
-	"math"
+	//"math"
 )
 
 // variable declarations
@@ -14,16 +14,28 @@ import (
 
 
 func main() {
-	const inflationRate = 6.5
-	investmentAmount, years := 10000.0, 10.0
-	expectedRunRate := 5.5
 
-	fmt.Print("Enter the input value = ")
-	fmt.Scan(&investmentAmount)
+	var revenue float64
+	var expenses float64
+	var tax_rate float64
 
-	futureValue := investmentAmount * math.Pow(1+ expectedRunRate/100, years)
-	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
-	fmt.Println(futureRealValue)
-	fmt.Println(futureValue)
+	fmt.Print("Enter the revenue you are making = ")
+	fmt.Scan(&revenue)
+
+	fmt.Print("How much are your expenses? = ")
+	fmt.Scan(&expenses)
+
+	fmt.Print("What is the new tax rate? = ")
+	fmt.Scan(&tax_rate)
+
+	earning_before_taxes := revenue - expenses
+
+	profit := earning_before_taxes * (1 - tax_rate/100)
+
+	ratio:= earning_before_taxes/profit
+
+	fmt.Println(earning_before_taxes)
+	fmt.Println(profit)
+	fmt.Println(ratio)
 
 }
