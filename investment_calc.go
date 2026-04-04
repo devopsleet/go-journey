@@ -12,7 +12,6 @@ import (
 
 //const a = 40
 
-
 func main() {
 
 	var revenue float64
@@ -32,10 +31,14 @@ func main() {
 
 	profit := earning_before_taxes * (1 - tax_rate/100)
 
-	ratio:= earning_before_taxes/profit
+	ratio := earning_before_taxes / profit
 
-	fmt.Println(earning_before_taxes)
+	//fmt.Println(earning_before_taxes)
+	formattedFEB := fmt.Sprintf("Earning before taxes: %.1f\n", earning_before_taxes)
+	fmt.Printf(formattedFEB)
+
 	fmt.Println(profit)
+
 	fmt.Println(ratio)
 
 }
