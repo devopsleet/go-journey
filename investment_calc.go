@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"slices"
-	//"math"
+	//"slices"
+	"math"
 )
 
 // variable declarations
@@ -14,12 +14,16 @@ import (
 
 
 func main() {
+	const inflationRate = 6.5
+	investmentAmount, years := 10000.0, 10.0
+	expectedRunRate := 5.5
 
-	//Slices
-	x:= []int{1,2,3}
-	y:= []int{1,2,3,4}
+	fmt.Print("Enter the input value = ")
+	fmt.Scan(&investmentAmount)
 
-	fmt.Println((slices.Equal(x,y)))
-
+	futureValue := investmentAmount * math.Pow(1+ expectedRunRate/100, years)
+	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
+	fmt.Println(futureRealValue)
+	fmt.Println(futureValue)
 
 }
