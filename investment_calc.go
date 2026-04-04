@@ -2,43 +2,45 @@ package main
 
 import (
 	"fmt"
-	//"slices"
-	//"math"
+	"math"
 )
 
-// variable declarations
-
-// const x = 10
-
-//const a = 40
+const expectedRunRate = 5.5
 
 func main() {
 
-	var revenue float64
-	var expenses float64
-	var tax_rate float64
+	investmentAmount := 0.0
+	years := 0.0
+	inflation := 5.0
 
-	fmt.Print("Enter the revenue you are making = ")
-	fmt.Scan(&revenue)
+	fmt.Print("Enter the inverstment Amount = ")
+	_, err := fmt.Scan(&investmentAmount)
+	if err != nil {
+		fmt.Print("Invalid Input")
+		return
+	}
 
-	fmt.Print("How much are your expenses? = ")
-	fmt.Scan(&expenses)
+	fmt.Print("Enter number of years = ")
+	_, err = fmt.Scan(&years)
+	if err != nil {
+		fmt.Print("Invalid Input")
+		return
+	}
 
-	fmt.Print("What is the new tax rate? = ")
-	fmt.Scan(&tax_rate)
+	fv := calculateFutureValue(investmentAmount, years)
+	rfv := calculateRealFutureValue(fv, inflation, years)
 
-	earning_before_taxes := revenue - expenses
+	fmt.Println(fv)
+	fmt.Println(rfv)
 
-	profit := earning_before_taxes * (1 - tax_rate/100)
+}
 
-	ratio := earning_before_taxes / profit
+func calculateFutureValue(investmentAmount float64, years float64) float64 {
 
-	//fmt.Println(earning_before_taxes)
-	formattedFEB := fmt.Sprintf("Earning before taxes: %.1f\n", earning_before_taxes)
-	fmt.Printf(formattedFEB)
+	return (investmentAmount * math.Pow(1+expectedRunRate/100, years))
 
-	fmt.Println(profit)
+}
 
-	fmt.Println(ratio)
-
+func calculateRealFutureValue(futureVal float64, inflation float64, years float64) float64 {
+	return (futureVal / math.Pow(1+inflation/100, years))
 }
