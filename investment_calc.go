@@ -27,20 +27,22 @@ func main() {
 		return
 	}
 
-	fv := calculateFutureValue(investmentAmount, years)
-	rfv := calculateRealFutureValue(fv, inflation, years)
+	fv, rfv := calculateFutureValue(investmentAmount, inflation, years)
+	// rfv := calculateRealFutureValue(fv, inflation, years)
 
 	fmt.Println(fv)
 	fmt.Println(rfv)
 
 }
 
-func calculateFutureValue(investmentAmount float64, years float64) float64 {
+func calculateFutureValue(investmentAmount float64, inflation float64, years float64) (fv float64, rfv float64) {
 
-	return (investmentAmount * math.Pow(1+expectedRunRate/100, years))
+	fv = (investmentAmount * math.Pow(1+expectedRunRate/100, years))
+	rfv = (fv / math.Pow(1+inflation/100, years))
+	return
 
 }
 
-func calculateRealFutureValue(futureVal float64, inflation float64, years float64) float64 {
-	return (futureVal / math.Pow(1+inflation/100, years))
-}
+// func calculateRealFutureValue(futureVal float64, inflation float64, years float64) float64 {
+// 	return (futureVal / math.Pow(1+inflation/100, years))
+// }
