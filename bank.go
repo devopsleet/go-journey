@@ -27,11 +27,22 @@ func main() {
 		fmt.Print("How much? = ")
 		var depositAmount float64
 		fmt.Scan(&depositAmount)
+
+		if depositAmount <= 0 {
+			fmt.Println("Invalid amount  must be grater than 0")
+			return
+		}
 		accountBalance += depositAmount
 		fmt.Println("New balance is ", accountBalance)
 
+	} else if choice == 3 {
+		fmt.Print("Withdraw the money ")
+		var moneyWithdrawn float64
+		fmt.Scan(&moneyWithdrawn)
+		accountBalance -= moneyWithdrawn
+		fmt.Println("Total balance left is ", accountBalance)
+	} else {
+		fmt.Println("Good Bye!")
 	}
-
-	fmt.Println("Your choice: ", choice)
 
 }
