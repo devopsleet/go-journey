@@ -32,5 +32,19 @@ func main() {
 	}
 
 	fmt.Println("Map view is ", totalWins)
+	fmt.Println("Map with a make function")
+
+	m := make(map[string]int, 10)
+	fmt.Println("M is ", len(m))
+
+	data := make(map[string]string)
+	data["name"] = "Gagan"
+	data["age"] = "32"
+	data["Job"] = "Golang developer"
+
+	v, ok := data["name"]
+	v2, ok2 := data["married"]
+	fmt.Printf(`%v data is present: %t`, v, ok)
+	fmt.Printf("%v data is present: %t", v2, ok2)
 
 }
