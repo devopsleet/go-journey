@@ -45,6 +45,24 @@ func main() {
 	v, ok := data["name"]
 	v2, ok2 := data["married"]
 	fmt.Printf(`%v data is present: %t`, v, ok)
+	println()
 	fmt.Printf("%v data is present: %t", v2, ok2)
+	println()
+
+	type person struct {
+		name string
+		age  int
+		pet  string
+	}
+
+	pet := struct {
+		name string
+		kind string
+	}{
+		name: "Fido",
+		kind: "dog",
+	}
+
+	fmt.Println(pet.name)
 
 }
