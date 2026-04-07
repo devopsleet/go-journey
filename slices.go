@@ -4,28 +4,30 @@ import "fmt"
 
 func main() {
 
-	// nil slice
-	var a []int
-	if a == nil {
-		fmt.Println(`It's a NIL slice`)
-	}
+	// x := make([]int, 4)
+	// fmt.Println(x)
 
-	// empty slice but not a nil slice
-	y := []int{}
+	// y := make([]int, 0, 10)
+	// y = append(y, 1, 2, 3, 4)
+	// fmt.Println("New slice is ", y)
 
-	fmt.Println("Its an empty slice")
-	fmt.Println(len(y))
+	// copy a slice
+	// x := []int{1, 4, 6}
+	// y := make([]int, 2)
+	// num := copy(y, x[2:])
+	// fmt.Println(y, num)
 
-	x := []int{1, 2, 3, 4, 5, 6}
-	fmt.Println(cap(x))
+	// // Convert arrays to slice
+	// xArray := [4]int{1, 2, 3, 4}
+	// xSlice := xArray[:]
+	// fmt.Println("Slice is ", xSlice)
 
-	z := make([]int, 5)
-	z = append(z, 1, 2, 3, 4)
-	fmt.Println("z is ", z)
-
-	s := make([]int, 0, 10)
-	s = append(s, 1, 2, 3, 4)
-	fmt.Println("s is ", s)
-	fmt.Println("Capacity of s is", cap(s))
+	xSlice := []int{1, 2, 3, 4}
+	xArray := [4]int(xSlice)
+	smallArray := [2]int(xSlice)
+	xSlice[0] = 10
+	fmt.Println(xSlice)
+	fmt.Println(xArray)
+	fmt.Println(smallArray)
 
 }
