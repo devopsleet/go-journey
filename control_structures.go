@@ -20,4 +20,11 @@ func main() {
 		fmt.Println(i, v)
 	}
 
+	uniqueNames := map[string]bool{"Fred": true,
+		"Rahul": true, "Wilma": true}
+
+	for k := range uniqueNames {
+		fmt.Println(k)
+	}
+
 }
