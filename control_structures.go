@@ -15,6 +15,9 @@ func main() {
 		fmt.Println("That's a good number ", n)
 	}
 
-	fmt.Println("n is ", n)
+	evenVals := []int{2, 4, 6, 8, 10, 12}
+	for i, v := range evenVals {
+		fmt.Println(i, v)
+	}
 
 }
