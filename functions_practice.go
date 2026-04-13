@@ -31,12 +31,12 @@ func divAndRemainder(num, denom int) (result int, remainder int, err error) {
 		return result, remainder, err
 	}
 	result, remainder = num/denom, num%denom
-	return result, remainder, err
+	return
 }
 
 func main() {
 
-	result, remainder, err := divAndRemainder(5, 3)
+	result, remainder, err := divAndRemainder(5, 4)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
