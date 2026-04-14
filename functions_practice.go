@@ -42,6 +42,7 @@ func main() {
 		os.Exit(1)
 	}
 	fmt.Println(result, remainder)
+
 	// fmt.Println(addTobase(3, 1, 2))
 	// fmt.Println(addTobase(3, 2, 4, 6, 8, 10))
 	// fmt.Println(addTobase(3, []int{1, 2, 3}...))
