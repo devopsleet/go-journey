@@ -46,22 +46,32 @@ func main() {
 
 	// fmt.Println(b)
 
-	var y []int
-	fmt.Println(y == nil)
-	fmt.Println(len(y))
+	//var y []int
+	//fmt.Println(y == nil)
+	//fmt.Println(len(y))
 
 	z := []int{}
 	fmt.Println(z == nil)
 	fmt.Println(len(z))
 
-	x := make([]int, 5)
-	x = append(x, 10)
-	fmt.Println("Length of slice is ", len(x))
-	fmt.Println("Capacity of slice is ", cap(x))
+	// x := make([]int, 5)
+	// x = append(x, 10)
+	// fmt.Println("Length of slice is ", len(x))
+	// fmt.Println("Capacity of slice is ", cap(x))
 
 	// Emptying a Slice
 	x := []string{"a", "b", "c", "d"}
-	y = x[:2]
-	z = x[1:]
+	y := x[:2]
+	fmt.Println(cap(x), cap(y))
+	y = append(y, "z")
+	fmt.Println(x)
+	fmt.Println(y)
+
+	c := make([]int, 6)
+	fmt.Println(len(c))
+	//fmt.Println("Capacity is ", cap(c))
+
+	ages := make(map[int][]string, 10)
+	fmt.Println(len(ages))
 
 }
