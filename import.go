@@ -12,7 +12,10 @@ func main() {
 	if err != nil {
 		fmt.Println("Error ", err)
 		return
-	}
+	}kkkk
+
+
+	
 
 	defer resp.Body.Close()
 	fmt.Println("HTTP reponse stauts", resp.Status)
