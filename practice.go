@@ -2,7 +2,25 @@ package main
 
 import "fmt"
 
+type Employee struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
+
+const pi = 3.14
+const gravity = 9.81
+
 func main() {
+
+	const days int = 7
+
+	const (
+		monday        = 1
+		tuesday       = 2
+		wednesday     = 3
+		thursday  int = 4
+	)
 
 	r := "I'm Go language\\"
 	s := "Hello\nWorld"
@@ -60,18 +78,24 @@ func main() {
 	// fmt.Println("Capacity of slice is ", cap(x))
 
 	// Emptying a Slice
-	x := []string{"a", "b", "c", "d"}
-	y := x[:2]
-	fmt.Println(cap(x), cap(y))
-	y = append(y, "z")
-	fmt.Println(x)
-	fmt.Println(y)
+	// x := []string{"a", "b", "c", "d"}
+	// y := x[:2]
+	// fmt.Println(cap(x), cap(y))
+	// y = append(y, "z")
+	// fmt.Println(x)
+	// fmt.Println(y)
 
-	c := make([]int, 6)
-	fmt.Println(len(c))
-	//fmt.Println("Capacity is ", cap(c))
+	// c := make([]int, 6)
+	// fmt.Println(len(c))
+	// //fmt.Println("Capacity is ", cap(c))
 
-	ages := make(map[int][]string, 10)
-	fmt.Println(len(ages))
+	// ages := make(map[int][]string, 10)
+	// fmt.Println(len(ages))
+
+	const MAXRETRIES = 5
+
+	var employeeID = 1001
+
+	fmt.Println("EmployeeID is ", employeeID)
 
 }
