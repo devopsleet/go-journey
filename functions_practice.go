@@ -24,6 +24,16 @@ func MyFunc(opts MyFuncOpts) error {
 
 }
 
+func addTo(base int, vals ...int) []int {
+	output := make([]int, 0, len(vals))
+
+	for _, v := range vals {
+		output = append(output, base+v)
+	}
+
+	return output
+}
+
 func main() {
 	result := div(5, 2)
 	fmt.Println(result)
@@ -33,6 +43,8 @@ func main() {
 		"Singla",
 		32,
 	})
+
+	fmt.Println(addTo(1, 3, 5, 7, 9))
 
 	// map declarations
 	//var m = map[string]int{}
