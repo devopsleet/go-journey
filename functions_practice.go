@@ -45,7 +45,8 @@ func main() {
 	})
 
 	fmt.Println(addTo(1, 3, 5, 7, 9))
-
+	b := []int{2, 4, 6, 8}
+	fmt.Println(addTo(1, b...))
 	// map declarations
 	//var m = map[string]int{}
 	// d := map[string]int{
