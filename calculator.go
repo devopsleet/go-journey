@@ -21,7 +21,10 @@ func subtract(x, y int) int {
 	return x - y
 }
 
-var opMap = map[string]func(int, int) int{
+// function type declaration
+type opFuncType func(int, int) int
+
+var opMap = map[string]opFuncType{
 	"+": add,
 	"-": subtract,
 }
