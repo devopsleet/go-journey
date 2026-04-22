@@ -2,15 +2,32 @@ package main
 
 import "fmt"
 
+func counter() func() int {
+	count := 0
+
+	return func() int {
+		count++
+		return count
+	}
+}
+
+func makeMult(base int) func(int) int {
+	return func(factor int) int {
+		return base * factor
+	}
+}
+
 func main() {
 
-	for i := 0; i < 5; i++ {
+	twoBase := makeMult(2)
+	threeBase := makeMult(3)
 
-		// inner anonymous function
-		func(j int) {
-			fmt.Println("printing ", j, "from inside the anonymous function")
-		}(i)
-
+	for i := 0; i < 3; i++ {
+		fmt.Println(twoBase(i), threeBase(i))
 	}
+	c := counter()
+	fmt.Println(c())
+	fmt.Println(c())
+	fmt.Println(c())
 
 }
