@@ -2,44 +2,22 @@ package main
 
 import "fmt"
 
-type Person struct {
-	FirstName string
-	Lastname  *string
-	age       int
-}
-
-func makePointer[T any](t T) *T {
-	return &t
+func update(y []int) {
+	fmt.Println("lenth is ", len(y))
+	fmt.Println("capacity is ", cap(y))
+	y[2] = 30
+	y = append(y, 40)
+	fmt.Println("lenth(after) is ", len(y))
+	fmt.Println("capacity(after) is ", cap(y))
+	y[1] = 20
+	fmt.Println("The updated slice is ", y)
 }
 
 func main() {
 
-	p := Person{
-		FirstName: "Gagan",
-		Lastname:  makePointer("Singla"),
-		age:       14,
-	}
-
-	fmt.Println(p)
-
-	// variables
-	var x int32 = 10
-
-	pointerX := &x
-
-	var y bool = true
-	pointerY := &y
-
-	fmt.Println("X and Y are ", pointerX, pointerY)
-
-	// var z *string
-	// fmt.Println("The value of pointer z is ", z)
-
-	a := "hello"
-	pointerToA := &a
-	fmt.Println(*pointerToA)
-
-	z := 5 + *pointerX
-	fmt.Println(z)
+	// nil pointer
+	x := []int{1, 2, 3, 4}
+	update(x)
+	fmt.Println("The original slice is ", x)
 
 }
