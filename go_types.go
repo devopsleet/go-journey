@@ -3,21 +3,22 @@ package main
 import "fmt"
 
 type Person struct {
-	name string
-	age  int
+	FirtName string
+	LastName string
+	Age      int
 }
 
-func (p Person) String() string {
-	return fmt.Sprintf("%s", p.name)
+func (p Person) printInfo() string {
+	return fmt.Sprintf("%s is the FirstName", p.FirtName)
 }
 
 func main() {
 
 	p := Person{
 		"Gagan",
-		30,
+		"Singla",
+		32,
 	}
 
-	fmt.Println(p.String())
-
+	fmt.Println(p.printInfo())
 }
