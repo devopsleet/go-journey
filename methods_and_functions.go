@@ -21,7 +21,7 @@ func (c *Counter) Increment() {
 
 func main() {
 
-	var c Counter
+	c := &Counter{}
 	output := c.String()
 	fmt.Println(output)
 	c.Increment()
