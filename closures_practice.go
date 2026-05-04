@@ -1,27 +1,21 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-)
+import "fmt"
+
+func helper(x, multiplier int) int {
+	return x * multiplier
+}
+
+func process(nums []int, multiplier int) {
+	for _, val := range nums {
+		fmt.Println(helper(val, multiplier))
+		//val * helper(val, multiplier)
+	}
+}
 
 func main() {
 
-	type person struct {
-		FirstName string
-		LastName  string
-		age       int
-	}
+	nums := []int{1, 2, 3, 4}
+	process(nums, 3)
 
-	people := []person{
-		{"Pat", "patterson", 37},
-		{"Tracy", "Bobdaugter", 23},
-		{"Fred", "Fredson", 18},
-	}
-
-	sort.Slice(people, func(i, j int) bool {
-		return people[i].LastName < people[j].LastName
-	})
-
-	fmt.Println(people)
 }
