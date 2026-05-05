@@ -2,20 +2,19 @@ package main
 
 import "fmt"
 
-func helper(x, multiplier int) int {
-	return x * multiplier
-}
+func multiplier(base int) func(int) int {
 
-func process(nums []int, multiplier int) {
-	for _, val := range nums {
-		fmt.Println(helper(val, multiplier))
-		//val * helper(val, multiplier)
+	return func(factor int) int {
+		return base * factor
 	}
+
 }
 
 func main() {
 
-	nums := []int{1, 2, 3, 4}
-	process(nums, 3)
+	twoBase := multiplier(2)
+	for i := 0; i < 3; i++ {
+		fmt.Println(twoBase(i))
+	}
 
 }
