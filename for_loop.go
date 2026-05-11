@@ -14,20 +14,24 @@ func main() {
 	// 	fmt.Println("Odd number value is ", i)
 	// }
 
-	rows := 5
+	// rows := 7
 
 	// Outer loop
-	for i := 1; i <= rows; i++ {
-		// inner loop for spaces before stars
-		for j := 1; j <= rows-i; j++ {
-			fmt.Print(" ")
+	// for i := 1; i <= rows; i++ {
+	// 	// inner loop for spaces before stars
+	// 	for j := 1; j <= rows-i; j++ {
+	// 		fmt.Print(" ")
 
-		}
-		// inner loop for stars
-		for k := 1; k <= 2*i-1; k++ {
-			fmt.Print("*")
-		}
-		fmt.Println()
+	// 	}
+	// 	// inner loop for stars
+	// 	for k := 1; k <= 2*i-1; k++ {
+	// 		fmt.Print("*")
+	// 	}
+	// 	fmt.Println()
+	// }
+
+	for i := range 10 {
+		fmt.Println(i)
 	}
 
 }
