@@ -23,14 +23,22 @@ func (c *Counter) Increment() {
 
 func main() {
 
+	// c := &Counter{}
+
+	// output := c.String()
+	// fmt.Println(output)
+
+	// c.Increment()
+	// fmt.Println(c.String())
+
 	// local variable value type
-	var c Counter
+	// var c Counter
 
-	output := c.String()
-	fmt.Println(output)
+	// output := c.String()
+	// fmt.Println(output)
 
-	c.Increment()
+	// c.Increment()
 
-	fmt.Println(c.String())
+	// fmt.Println(c.String())
 
 }
