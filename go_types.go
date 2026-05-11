@@ -29,4 +29,8 @@ func main() {
 	output := c.String()
 	fmt.Println(output)
 
+	c.Increment()
+
+	fmt.Println(c.String())
+
 }
