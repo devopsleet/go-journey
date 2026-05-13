@@ -2,47 +2,34 @@ package main
 
 import "fmt"
 
-// interface
-type Orderable interface {
-	Order(any) int
+type Stack[T any] struct {
+	vals []T
 }
 
-type Tree struct {
-	val         Orderable
-	left, right *Tree
+func (s *Stack[T]) Push(val T) {
+	s.vals = append(s.vals, val)
 }
 
-func (t *Tree) Insert(val Orderable) *Tree {
-	if t == nil {
-		return &Tree{val: val}
+func (s *Stack[T]) Pop() (T, bool) {
+	if len(s.vals) == 0 {
+		var zero T
+		return zero, false
 	}
 
-	switch comp := val.Order(t.val); {
-
-	case comp < 0:
-		t.left = t.left.Insert(val)
-	case comp > 0:
-		t.right = t.right.Insert(val)
-
-	}
-
-	return t
-}
-
-type OrderableInt int
-
-func (oi OrderableInt) Order(val any) int {
-	return int(oi - val.(OrderableInt))
+	top := s.vals[len(s.vals)-1]
+	s.vals = s.vals[:len(s.vals)-1]
+	return top, true
 }
 
 func main() {
 
-	var it *Tree
+	var intStack Stack[int]
+	intStack.Push(10)
+	intStack.Push(20)
 
-	it = it.Insert(OrderableInt(5))
-	it = it.Insert(OrderableInt(3))
-
-	fmt.Println(it.left.val)
-	//fmt.Println(it.right.val)
+	v, ok := intStack.Pop()
+	v, ok = intStack.Pop()
+	v, ok = intStack.Pop()
+	fmt.Println(v, ok)
 
 }
