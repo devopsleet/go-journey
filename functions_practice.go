@@ -1,31 +1,18 @@
-// functions are values
-
 package main
 
 import "fmt"
 
-var myFuncVariable func(string) int
+func sum(numbers ...int) (result int) {
 
-func f1(a string) int {
-	return len(a)
-}
-
-func f2(b string) int {
-	total := 0
-
-	for _, val := range b {
-		total += int(val)
+	for _, val := range numbers {
+		result += val
 	}
 
-	return total
+	return
 }
 
 func main() {
 
-	myFuncVariable := f1
-	fmt.Println(myFuncVariable("Hello"))
-
-	myFuncVariable = f2
-	fmt.Println("The sum of all the ASCII characters is ", myFuncVariable("a"))
+	fmt.Println("The total sum is ", sum(1, 2, 3, 4, 5))
 
 }
