@@ -1,37 +1,28 @@
-// package main
+package main
 
-// import (
-// 	"fmt"
-// 	"strings"
-// )
+import "fmt"
 
-// // Define a custom type
-// type Score int
+type Person struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
 
-// // Define a function type
-// type Converter func(string) Score
+// method defined only at the package level
 
-// func process(input string, conv Converter) Score {
-// 	return conv(input)
-// }
+func (p Person) String() string {
+	return fmt.Sprintf("My name is %s and my age is %d", p.FirstName, p.Age)
+}
 
-// func countLength(input string) Score {
-// 	return Score(len(input))
-// }
+func main() {
+	p := Person{
+		"fred",
+		"Fredson",
+		22,
+	}
 
-// func countVowels(input string) Score {
-// 	count := 0
-// 	for _, val := range input {
-// 		if strings.ContainsRune("aeiou", val) {
-// 			count++
-// 		}
-// 	}
-// 	return Score(count)
-// }
+	output := p.String()
 
-// func main() {
+	fmt.Println("The output is ", output)
 
-// 	result := process("aeiou", countVowels)
-// 	fmt.Println("The Length of the input String is ", result)
-
-// }
+}
