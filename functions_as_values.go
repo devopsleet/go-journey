@@ -2,28 +2,19 @@ package main
 
 import "fmt"
 
-// func add(x, y int) int {
+// variable of type function
+var myFuncVariable func(string) int
 
-// 	return x + y
-// }
+func f1(a string) int {
 
-func multiply(x, y int) int {
-	return x * y
-}
+	return len(a)
 
-func compute(f func(int, int) int) {
-	fmt.Println("The value is ", f(2, 3))
 }
 
 func main() {
 
-	//var f func(int, int) int
-
-	compute(add)
-	compute(multiply)
-
-	// f = add
-
-	// fmt.Println("The value of addition is ", f(2, 3))
+	myFuncVariable = f1
+	output := myFuncVariable("Welcome")
+	fmt.Println("The length of the string is ", output)
 
 }
