@@ -1,26 +1,23 @@
+// program to add a base to the numbers
+
 package main
 
 import "fmt"
 
-// Public exported struct
-type MyFuncOpts struct {
-	FirstName string
-	Lastname  string
-	Age       int
-}
+func AddToBase(base int, vals ...int) []int {
+	s := make([]int, 0, len(vals))
 
-// struct as named and positional parameters
-func MyFunc(opts MyFuncOpts) string {
-	return fmt.Sprintf("%s", opts.Lastname)
+	for _, val := range vals {
+		s = append(s, base+val)
+	}
 
+	return s
 }
 
 func main() {
 
-	output := MyFunc(MyFuncOpts{
-		FirstName: "Gagan",
-	})
-
+	input := []int{3, 4, 5, 6}
+	output := AddToBase(2, input...)
 	fmt.Println("The output is ", output)
 
 }
