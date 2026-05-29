@@ -2,18 +2,25 @@ package main
 
 import "fmt"
 
-// simple function declaration
-func div(num int, denom int) int {
-	if denom == 0 {
-		return 0
-	}
+// Public exported struct
+type MyFuncOpts struct {
+	FirstName string
+	Lastname  string
+	Age       int
+}
 
-	return num / denom
+// struct as named and positional parameters
+func MyFunc(opts MyFuncOpts) string {
+	return fmt.Sprintf("%s", opts.Lastname)
+
 }
 
 func main() {
 
-	output := div(2, 0)
-	fmt.Println("The finals answer is ", output)
+	output := MyFunc(MyFuncOpts{
+		FirstName: "Gagan",
+	})
+
+	fmt.Println("The output is ", output)
 
 }
