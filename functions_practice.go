@@ -1,23 +1,22 @@
-// program to add a base to the numbers
-
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-func AddToBase(base int, vals ...int) []int {
-	s := make([]int, 0, len(vals))
+func Denom(num, denom int) (result, remainder int, err error) {
 
-	for _, val := range vals {
-		s = append(s, base+val)
+	if denom == 0 {
+		return 0, 0, errors.New("divide by zero")
 	}
 
-	return s
+	result, remainder = num/denom, num%denom
+
+	return
 }
 
 func main() {
-
-	input := []int{3, 4, 5, 6}
-	output := AddToBase(2, input...)
-	fmt.Println("The output is ", output)
-
+	res, rem, err := Denom(5, 2)
+	fmt.Println(res, rem, err)
 }
