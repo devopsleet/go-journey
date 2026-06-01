@@ -1,26 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"os"
+)
 
-func deferExample(a int) int {
-	//a = 10
-	defer func(a int) {
-		fmt.Println("Function 1 ", a)
-	}(a)
-
-	a = 20
-	defer func(a int) {
-		fmt.Println("Function 2 ", a)
-	}(a)
-
-	a = 30
-	fmt.Println("Exiting call")
-	return a
-
-}
 func main() {
 
-	result := deferExample(10)
-	fmt.Println("The final result is ", result)
+	if len(os.Args) < 2 {
+		log.Fatal("no file specified")
+	}
+
+	f, err := os.Open(os.Args[1])
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer f.Close()
+
+	data := make([]byte, 2048)
+
+	for {
+		count, err := f.Read(data)
+		os.Stdout.Write(data[:count])
+		if err != nil {
+			log.Fatal(err)
+		}
+		break
+	}
 
 }
