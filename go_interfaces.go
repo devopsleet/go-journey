@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 type Person struct {
@@ -27,16 +26,17 @@ func (pp *Person) IncrementAge() {
 
 func main() {
 
-	var p Person
-	p = Person{
-		Name: "Gagan",
-		Age:  32,
-	}
+	var p = new(Person)
+	fmt.Println(p == nil)
+	// p = &Person{
+	// 	Name: "Gagan",
+	// 	Age:  32,
+	// }
 	fmt.Println(p.String())
-	//fmt.Printf("Address of Original P is %p\n", &p)
-	// fmt.Println("The value of Original P is ", p)
-	fmt.Println(strings.Repeat("*", 10))
-	p.IncrementAge()
-	fmt.Println(p.String())
+	// //fmt.Printf("Address of Original P is %p\n", &p)
+	// // fmt.Println("The value of Original P is ", p)
+	// fmt.Println(strings.Repeat("*", 10))
+	// p.IncrementAge()
+	// fmt.Println(p.String())
 
 }
