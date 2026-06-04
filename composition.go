@@ -8,7 +8,7 @@ type Employee struct {
 }
 
 func (e Employee) Description() string {
-	return fmt.Sprintf("The Name is %s and ID is %s", e.Name, e.ID)
+	return fmt.Sprintf("%s (%s), e.Name, e.ID")
 }
 
 type Manager struct {
@@ -16,14 +16,10 @@ type Manager struct {
 	Reports []Employee
 }
 
+func (m Manager) FindNewEmployees() []Employee {
+
+}
+
 func main() {
 
-	m := Manager{
-		Employee: Employee{
-			Name: "Gagan",
-			ID:   "122345",
-		},
-		Reports: []Employee{},
-	}
-	fmt.Println(m.Description())
 }
