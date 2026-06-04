@@ -7,6 +7,25 @@ type ListNode struct {
 	Next *ListNode
 }
 
+func hasCycle(head *ListNode) bool {
+
+	dict := make(map[*ListNode]bool)
+
+	ptr := head
+
+	for ptr != nil {
+		if _, ok := dict[ptr]; ok {
+			return true
+		}
+
+		dict[ptr] = true
+		ptr = ptr.Next
+	}
+
+	return false
+
+}
+
 func main() {
 
 	Node1 := &ListNode{val: 5}
@@ -15,16 +34,11 @@ func main() {
 
 	Node1.Next = Node2
 	Node2.Next = Node3
+	Node3.Next = Node1
 
 	head := Node1
 
-	for head != nil {
-
-		val := head.val
-
-		fmt.Println("The value is  ", val)
-
-		head = head.Next
-	}
+	output := hasCycle(head)
+	fmt.Println(output)
 
 }
