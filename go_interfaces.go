@@ -1,42 +1,44 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type Person struct {
 	Name string
 	Age  int
 }
 
-// method with a value receiver
 func (p Person) String() string {
-	//fmt.Printf("Address of received P is %p\n", &p)
-	//p.Age++
-	return fmt.Sprintf("Name is %s and my age is %d", p.Name, p.Age)
-
+	return fmt.Sprintf("Your name is %s and age is %d", p.Name, p.Age)
 }
 
-// method with a pointer receiver
-func (pp *Person) IncrementAge() {
-	//fmt.Printf("Address of received P is %p\n", pp)
-	//fmt.Println(*(pp))
-	pp.Age++
+func (p *Person) Increment() {
+	p.Age++
+}
+
+type Stringer interface {
+	String() string
+}
+
+type Incrementer interface {
+	Increment()
 }
 
 func main() {
 
-	var p = new(Person)
-	fmt.Println(p == nil)
-	// p = &Person{
-	// 	Name: "Gagan",
-	// 	Age:  32,
-	// }
-	fmt.Println(p.String())
-	// //fmt.Printf("Address of Original P is %p\n", &p)
-	// // fmt.Println("The value of Original P is ", p)
-	// fmt.Println(strings.Repeat("*", 10))
-	// p.IncrementAge()
-	// fmt.Println(p.String())
+	p := &Person{
+		"Gagan",
+		32,
+	}
+
+	var myStringer Stringer
+
+	myStringer = p
+
+	var myIncrementer Incrementer
+
+	myIncrementer = p
+
+	fmt.Println(myStringer.String())
+	fmt.Println(myIncrementer.Increment)
 
 }
