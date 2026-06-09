@@ -1,44 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-type Person struct {
-	Name string
-	Age  int
-}
-
-func (p Person) String() string {
-	return fmt.Sprintf("Your name is %s and age is %d", p.Name, p.Age)
-}
-
-func (p *Person) Increment() {
-	p.Age++
-}
-
-type Stringer interface {
-	String() string
-}
-
-type Incrementer interface {
-	Increment()
-}
-
-func main() {
-
-	p := &Person{
-		"Gagan",
-		32,
+func Divide(num int, div int) (int, error) {
+	if div == 0 {
+		return 0, errors.New("cannot divide by 0")
 	}
 
-	var myStringer Stringer
+	return num / div, nil
+}
+func main() {
 
-	myStringer = p
+	divideBy := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 
-	var myIncrementer Incrementer
+	for _, div := range divideBy {
 
-	myIncrementer = p
+		res, err := Divide(100, div)
 
-	fmt.Println(myStringer.String())
-	fmt.Println(myIncrementer.Increment)
+		if err != nil {
+			fmt.Printf("100 by %d error: %s\n", div, err)
+			continue
+		}
+
+		fmt.Printf("100 divided by %d = %d\n", div, res)
+	}
 
 }
