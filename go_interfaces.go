@@ -1,31 +1,13 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-)
+import "fmt"
 
-func Divide(num int, div int) (int, error) {
-	if div == 0 {
-		return 0, errors.New("cannot divide by 0")
-	}
-
-	return num / div, nil
-}
 func main() {
 
-	divideBy := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	var x interface{}
 
-	for _, div := range divideBy {
+	x = 42
 
-		res, err := Divide(100, div)
-
-		if err != nil {
-			fmt.Printf("100 by %d error: %s\n", div, err)
-			continue
-		}
-
-		fmt.Printf("100 divided by %d = %d\n", div, res)
-	}
+	fmt.Println(x)
 
 }
