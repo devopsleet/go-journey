@@ -20,7 +20,7 @@ func main() {
 	denominator := 3
 	remainder, mod, err := calcRemainderAndMod(numerator, denominator)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Errorf("erros")
 		os.Exit(1)
 	}
 	fmt.Println(remainder, mod)
