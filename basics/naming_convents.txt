@@ -1,0 +1,16 @@
+package main
+
+func main() {
+	// Pascal case
+	// Structs, interfaces, enums
+
+	// snakecase
+	// user_id, first_name, http_request
+
+	// UPPERCASE
+	// use case is constants
+
+	// mixedcase
+	// Eg. javascript, htmlDocument
+
+}
