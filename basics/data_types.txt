@@ -1,26 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
-	var age int
+	// var x int
+	// fmt.Println(x == 0)
+	// fmt.Println(strings.Repeat("*", 10))
 
-	var name = "John"
+	// var y int = 12
+	// fmt.Println(y)
 
-	count := 10
+	// var z = 13
+	// fmt.Println(z)
 
-	lastName = "Singh"
-}
+	// a := 14
+	// fmt.Println(a)
 
-// Default values
-
-// Numeric Types: 0
-// Boolean Types: false
-// String Type : ""
-// Pointers, Slices, maps, functions, and structs: nil
-
-// --- Scope
-func printName() {
-	firstName := "gagan"
+	// var b = new(int)
+	// fmt.Println(*b == 0)
+	// fmt.Println(b == nil)
+	// fmt.Println(b)
 }
