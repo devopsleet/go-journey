@@ -20,7 +20,7 @@ func main() {
 	result = a * b
 	fmt.Println("Multiply ", result)
 
-	x := 22.0 / 7
+	x := 22 / 7
 	fmt.Println(x)
 
 	var maxInt int64 = 1<<63 - 1
@@ -31,5 +31,11 @@ func main() {
 
 	z := math.MaxFloat64 / 3
 	fmt.Println("Tha value of z is ", z)
+
+	const d float64 = 22 / 7
+	fmt.Println("teh value of d is ", d)
+
+	const i int = 22.0 / 7
+	fmt.Println("The value of intger i is", i)
 
 }
