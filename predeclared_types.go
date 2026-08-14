@@ -20,5 +20,5 @@ func main() {
 	var myFirstInitial rune = 'G'
 	var myLastinitial int32 = 'S'
 
-	fmt.Printf("The first initial is %c and last initail is %c", myFirstInitial, myLastinitial)
+	fmt.Printf("The first initial is %c and last initial is %c", myFirstInitial, myLastinitial)
 }
