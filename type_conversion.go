@@ -3,24 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	var (
-		x    int
-		y        = 20
-		z    int = 30
-		d, e     = 40, "hello"
-		f, g string
-	)
+	// untyped constant
+	const x = 10
 
-	fmt.Println(x, y, z, d, e, f, g)
+	var a int64 = x
+	var b float64 = x
+	var c byte = x
 
-	const a int64 = 10
+	fmt.Println("The value of a, b and c is ", a, b, c)
+	fmt.Printf("%.1f\n", b)
 
-	const (
-		idKey   = "id"
-		nameKey = "name"
-	)
+	// typed constant
+	const y int64 = 10
 
-	const b = 20 * 10
-
-	fmt.Println("The value of b is ", b)
+	var d float64 = y
+	fmt.Println(d)
 }
