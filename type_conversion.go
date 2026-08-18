@@ -3,20 +3,24 @@ package main
 import "fmt"
 
 func main() {
-	var x int = 10
-	var y float64 = 30.2
-	var sum1 float64 = float64(x) + y
-	var sum2 int = x + int(y)
-	fmt.Println(sum1, sum2)
+	var (
+		x    int
+		y        = 20
+		z    int = 30
+		d, e     = 40, "hello"
+		f, g string
+	)
 
-	var b byte = 100
+	fmt.Println(x, y, z, d, e, f, g)
 
-	var sum3 int = x + int(b)
-	var sum4 byte = byte(x) + b
-	fmt.Println(sum3, sum4)
+	const a int64 = 10
 
-	var a int = 10
-	var c int64 = 20
+	const (
+		idKey   = "id"
+		nameKey = "name"
+	)
 
-	fmt.Println(a + int(c))
+	const b = 20 * 10
+
+	fmt.Println("The value of b is ", b)
 }
