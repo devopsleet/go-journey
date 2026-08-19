@@ -8,4 +8,12 @@ var z = [...]int{10, 20, 30}
 
 func main() {
 	fmt.Println(x == z)
+	fmt.Println(x[2])
+
+	// i := 7
+	// //fmt.Println(x[i])
+	// x[i] = 100
+
+	var s []int
+	fmt.Println(s == nil)
 }
