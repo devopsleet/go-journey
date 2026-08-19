@@ -28,4 +28,9 @@ func main() {
 	fmt.Println(slices.Equal(a, b))
 	fmt.Println(slices.Equal(b, c))
 	//fmt.Println(slices.Equal(c, d))
+
+	// shadowing the scope of outer x and y
+	var x = []int{1, 2, 3}
+	y := []int{20, 30, 40}
+	x = append(x, y...)
 }
