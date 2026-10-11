@@ -6,14 +6,17 @@ import "fmt"
 
 func main() {
 
-	x := 5
-	y := 10
+	// untyped constant
+	const x = 10
 
-	// compile time error
-	//const z = x + y
+	var y int = x
+	var z float64 = x
+	var d byte = x
 
-	z := x + y
+	fmt.Println("The values are ", y, z, d)
 
-	fmt.Println(z)
+	// typed constants
+
+	const typedX int = 10
 
 }
