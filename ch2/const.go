@@ -10,7 +10,9 @@ func main() {
 	y := 10
 
 	// compile time error
-	const z = x + y
+	//const z = x + y
+
+	z := x + y
 
 	fmt.Println(z)
 
