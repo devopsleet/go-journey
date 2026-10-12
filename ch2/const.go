@@ -7,16 +7,22 @@ import "fmt"
 func main() {
 
 	// untyped constant
-	const x = 10
+	// const x = 10
 
-	var y int = x
-	var z float64 = x
-	var d byte = x
+	// var y int = x
+	// var z float64 = x
+	// var d byte = x
 
-	fmt.Println("The values are ", y, z, d)
+	// fmt.Println("The values are ", y, z, d)
 
-	// typed constants
+	// // typed constants
 
-	const typedX int = 10
+	// const typedX int = 10
+
+	a := 10
+
+	a := 20
+
+	fmt.Println("The value of a is ", a)
 
 }
