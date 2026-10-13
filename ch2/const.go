@@ -21,8 +21,16 @@ func main() {
 
 	a := 10
 
-	a := 20
+	fmt.Println("The value of a  is ", a)
 
-	fmt.Println("The value of a is ", a)
+	const b = 20
 
+	var x = [3]int{10, 20}
+	fmt.Println(x[2])
+
+	var y = [12]int{1, 5: 4, 6, 10: 100, 15}
+	fmt.Println("The sparse array is ", y)
+
+	var z = [...]int{10, 20, 30}
+	fmt.Println("Teh value of array z is ", z)
 }
