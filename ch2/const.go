@@ -33,4 +33,10 @@ func main() {
 
 	var z = [...]int{10, 20, 30}
 	fmt.Println("Teh value of array z is ", z)
+
+	const size int = 4
+
+	var d [size]int
+
+	fmt.Println("The len of array d is ", len(d))
 }
