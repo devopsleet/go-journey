@@ -16,4 +16,9 @@ func main() {
 
 	x = append(x, 6)
 	fmt.Println("The new slice is ", x)
+
+	z := []int{10, 20, 30}
+	x = append(x, z...)
+
+	fmt.Println("The new vlaue of slice x is ", x)
 }
