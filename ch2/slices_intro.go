@@ -7,15 +7,16 @@ import (
 
 func main() {
 
-	var x []int
-	fmt.Println(x, len(x), cap(x))
-	x = append(x, 10)
-	fmt.Println(x, len(x), cap(x))
-	x = append(x, 20)
-	fmt.Println(x, len(x), cap(x))
-	x = append(x, 30)
-	fmt.Println(x, len(x), cap(x))
-	x = append(x, 40)
-	fmt.Println(x, len(x), cap(x))
+	xSlice := []int{10, 20, 30, 40}
+	subSlice := xSlice[1:]
+
+	fmt.Println("The Full slice is ", xSlice)
+	fmt.Println("The Sub Slice is ", subSlice)
+
+	// Sub Slice share the underlying array with the main Slice
+	subSlice[2] = 50
+
+	fmt.Println("xSlice: ", xSlice)
+	fmt.Println("subSlice: ", subSlice)
 
 }
