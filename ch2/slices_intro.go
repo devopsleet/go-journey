@@ -19,4 +19,11 @@ func main() {
 	fmt.Println("xSlice: ", xSlice)
 	fmt.Println("subSlice: ", subSlice)
 
+	// converting slice to array
+	xArray := [4]int(xSlice)
+	fmt.Println("The new array converted from Slice is ", xArray)
+
+	xArrayPointer := (*[4]int)(xSlice)
+	fmt.Println("The value of second array is ", *xArrayPointer)
+
 }
