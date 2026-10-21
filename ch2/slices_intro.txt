@@ -26,4 +26,21 @@ func main() {
 	xArrayPointer := (*[4]int)(xSlice)
 	fmt.Println("The value of second array is ", *xArrayPointer)
 
+	s := "Hello"
+
+	r := []rune(s)
+
+	b := []byte(s)
+	b[0] = 'Y'
+
+	fmt.Println(r[1])
+	fmt.Println(b[1])
+
+	fmt.Println("The value of b is ", b)
+	fmt.Println("The value of r is ", r)
+
+	var i int = 65
+	var snew string = string(i)
+	fmt.Println(snew)
+
 }
