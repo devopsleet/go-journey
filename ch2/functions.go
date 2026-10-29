@@ -1,61 +1,34 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-	"os"
-)
+import "fmt"
 
-type MyFuncOpts struct {
-	First string
-	Last  string
-	Age   int
+//var myFuncVariable func(string) int
+
+func f1(a string) int {
+	return len(a)
 }
 
-func MyFunc(opts MyFuncOpts) {
-
-	fmt.Println("My FirtName is ", opts.First)
-}
-
-func addTo(base int, vals ...int) []int {
-
-	out := make([]int, 0, len(vals))
-	for _, v := range vals {
-		out = append(out, base+v)
+func f2(a string) int {
+	total := 0
+	for _, v := range a {
+		total += int(v)
 	}
 
-	return out
-
-}
-
-func divAndRemainder(num, denom int) (int, int, error) {
-	if denom == 0 {
-		return 0, 0, errors.New("cannot divide by zero")
-	}
-	return num / denom, num % denom, nil
+	return total
 }
 
 func main() {
 
-	MyFunc(MyFuncOpts{
-		First: "Gagan",
-		Last:  "Singla",
-	})
+	var myFuncVariable func(string) int
 
-	fmt.Println(addTo(3))
-	fmt.Println(addTo(2, 3))
-	fmt.Println(3, 2, 4, 6, 8)
+	//myFuncVariable2 := func(string) int
 
-	a := []int{4, 3}
+	myFuncVariable = f1
+	result := myFuncVariable("Hello")
+	fmt.Println(result)
 
-	fmt.Println(addTo(3, a...))
-
-	result, remainder, err := divAndRemainder(5, 2)
-	if err != nil {
-		fmt.Println("The error is ", err)
-		os.Exit(1)
-	}
-
-	fmt.Println(result, remainder)
+	// myFuncVariable2 = f2
+	// result2 := myFuncVariable2("Gagan")
+	// fmt.Println(result2)
 
 }
