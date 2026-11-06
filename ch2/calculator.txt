@@ -1,0 +1,50 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+func divAndRemainder(num, denom int) (result, remainder int, err error) {
+
+	if denom == 0 {
+		err = errors.New("Cannot divide by zero")
+		return
+	}
+	result, remainder = num/denom, num%denom
+	return
+}
+
+func f1(s string) int {
+	return len(s)
+}
+
+func f2(s string) int {
+	total := 0
+
+	for _, val := range s {
+		total += int(val)
+	}
+
+	return total
+}
+
+func main() {
+
+	res, rem, err := divAndRemainder(0, 2)
+
+	if err != nil {
+		fmt.Println("The result is ", res, " and remainder is ", rem)
+	} else {
+		fmt.Println("Error : ", err)
+	}
+
+	// function as variables
+	var myFunctionVariable func(string) int
+	myFunctionVariable = f1
+	lengthOfString := myFunctionVariable("Go😊")
+	fmt.Println("The length is ", lengthOfString)
+	myFunctionVariable = f2
+	fmt.Println("The total sum of all the values ", myFunctionVariable("😊"))
+
+}
