@@ -1,0 +1,14 @@
+package main
+
+func modMap(m map[int]string)
+
+func main() {
+
+	m := map[int]string{
+		1: "first",
+		2: "second",
+	}
+
+	modMap(m)
+
+}
