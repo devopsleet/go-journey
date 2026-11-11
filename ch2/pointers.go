@@ -2,36 +2,66 @@ package main
 
 import "fmt"
 
-var x *int
+// var x *int
 
-type Person struct {
-	FirstName string
-	LastName  *string
-	Age       int
-}
+// type Person struct {
+// 	FirstName string
+// 	LastName  *string
+// 	Age       int
+// }
 
-//fmt.Println("Outside")
+// //fmt.Println("Outside")
 
-func failedUpdate(g *int) {
+// func failedUpdate(g *int) {
 
-	x := 10
+// 	x := 10
 
-	g = &x
+// 	g = &x
+// }
+
+func update(s []int) {
+
+	fmt.Println("The length of a slice s is ", len(s))
+	fmt.Println("The capacity of a slice s is ", cap(s))
+
+	s[0] = 10
+	s[1] = 20
+	s[2] = 30
+
+	fmt.Println("Pring a slice from the Update function before append ", s)
+
+	s = append(s, 200)
+
+	fmt.Println("Pring a slice from the Update function after append ", s)
+
 }
 func main() {
 
-	fmt.Println(x == nil)
+	s := []int{1, 2, 3, 4, 5}
 
-	p := &Person{}
+	fmt.Println("The length of a slice s is ", len(s))
+	fmt.Println("The capacity of a slice s is ", cap(s))
 
-	fmt.Println("The value of Person p is ", p)
+	s = append(s, 100)
 
-	fmt.Printf("the address of Person p is %p\n", p)
+	fmt.Println("The length of a slice s is ", len(s))
+	fmt.Println("The capacity of a slice s is ", cap(s))
 
-	var f *int // nil
+	fmt.Println("Printing a slice from the main function before update", s)
+	update(s)
+	fmt.Println("Printing a slice from the main function after update", s)
+	// fmt.Println(x == nil)
 
-	failedUpdate(f)
+	// p := &Person{}
 
-	fmt.Println(f)
+	// fmt.Println("The value of Person p is ", p)
+
+	// fmt.Printf("the address of Person p is %p\n", p)
+
+	// var f *int // nil
+
+	// failedUpdate(f)
+
+	// fmt.Println(f)
 
 }
