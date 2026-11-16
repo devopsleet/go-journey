@@ -26,4 +26,6 @@ func main() {
 
 	greet2(p)
 
+	fmt.Println(1 << 1)
+
 }
