@@ -32,6 +32,6 @@ func main() {
 	}
 	finalresult := c.Program()
 
-	fmt.Println(finalresult)
+	fmt.Println("finalresult is " + finalresult)
 
 }
