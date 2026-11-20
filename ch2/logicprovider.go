@@ -33,5 +33,6 @@ func main() {
 	finalresult := c.Program()
 
 	fmt.Println("finalresult is " + finalresult)
+	fmt.Println("Final result retuned by interface is " + finalresult)
 
 }
